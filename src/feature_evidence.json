@@ -1,0 +1,68 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-investigate-and-fix-the-production-publishing-deployment-error-so-the-app-can-be-successfully-built-and-published-to-production",
+      "featureTitle": "Investigate and fix the production publishing/deployment error so the app can be successfully built and published to production.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useBuzzFeedback.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-smoother-visual-transition-from-the-intro-screen-to-level-1-fade-or-similar-so-starting-the-quiz-feels-seamless",
+      "featureTitle": "Implement a smoother visual transition from the Intro screen to Level 1 (fade or similar), so starting the quiz feels seamless.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/quiz/SlideTransition.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-verify-in-the-production-build-that-all-quiz-question-titles-and-prompts-render-fully-no-truncation-half-cut-especially-on-small-mobile-screens-and-fix-any-remaining-layout-css-issues-causing-cut-off-text",
+      "featureTitle": "Verify in the production build that all quiz question titles and prompts render fully (no truncation/half-cut), especially on small mobile screens, and fix any remaining layout/CSS issues causing cut-off text.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/quiz/QuizSlide.tsx",
+        "frontend/src/components/quiz/levels/Level1.tsx",
+        "frontend/src/components/quiz/levels/Level2.tsx",
+        "frontend/src/components/quiz/levels/Level3.tsx",
+        "frontend/src/components/quiz/levels/Level4.tsx",
+        "frontend/src/components/quiz/levels/Level5.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

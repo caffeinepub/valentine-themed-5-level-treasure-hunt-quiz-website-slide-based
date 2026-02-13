@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Build a Valentine-themed website featuring a 5-level treasure hunt quiz titled \"The hunt to find your favourite girl\", with multiple-choice and free-text questions, slide-based progression, feedback messaging, and sound on wrong answers.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Question text is being truncated/half cut in the UI; needs layout/CSS adjustment so questions display fully.",
+    "Production deployment/publishing is failing with a deployment error (launch unsuccessful)."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-valentine-themed-single-page-quiz-experience-titled-the-hunt-to-find-your-favourite-girl-with-5-levels-one-question-per-level-and-a-final-completion-slide",
+      "title": "Create a Valentine-themed single-page quiz experience titled \"The hunt to find your favourite girl\" with 5 levels (one question per level) and a final completion slide.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-level-1-as-a-multiple-choice-question-where-was-the-first-time-you-saw-me-with-four-options-exactly-1-in-ibrahim-s-my-wedding-2-in-shabbir-s-bhai-wedding-3-in-your-mama-s-wedding-4-in-the-school-mark-only-in-your-mama-s-wedding-as-the-correct-answer",
+      "title": "Implement Level 1 as a multiple-choice question: \"Where was the first time you saw me?\" with four options exactly: (1) \"In Ibrahim's my wedding\" (2) \"In Shabbir's bhai wedding\" (3) \"In your mama's wedding\" (4) \"in the school\"; mark only \"In your mama's wedding\" as the correct answer.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-level-2-as-a-multiple-choice-question-what-s-the-one-thing-that-make-me-smile-secretly-with-four-options-exactly-1-your-geniusness-2-your-care-3-your-hardwork-4-or-you-mark-only-you-option-text-exactly-or-you-as-the-correct-answer",
+      "title": "Implement Level 2 as a multiple-choice question: \"What's the one thing that make me smile secretly?\" with four options exactly: (1) \"Your geniusness\" (2) \"Your care\" (3) \" your hardwork\" (4) \"or you\"; mark only \"you\" (option text exactly \"or you\") as the correct answer.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-level-3-as-a-multiple-choice-question-what-will-be-your-reactiom-when-you-find-out-that-i-will-be-going-to-jail-just-because-i-did-something-stupid-with-four-options-exactly-1-i-knew-it-2-you-are-crazy-3-how-can-you-do-this-4-oh-men-you-should-told-me-we-would-done-it-together-treat-every-option-as-correct-and-always-advance-to-level-4-after-selection",
+      "title": "Implement Level 3 as a multiple-choice question: \"What will be your reactiom when you find out that I will be going to jail just because I did something stupid.\" with four options exactly: (1) \"I knew it\" (2) \"You are crazy\" (3) \"How can you do this\" (4) \"Oh men you should told me we would done it together\"; treat every option as correct and always advance to Level 4 after selection.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-level-4-as-a-multiple-choice-question-what-make-you-love-more-with-four-options-exactly-1-my-love-2-my-smile-3-my-eyes-4-whole-me-mark-only-whole-me-option-text-exactly-whole-me-as-correct",
+      "title": "Implement Level 4 as a multiple-choice question: \"What make you love more ?\" with four options exactly: (1) \"My love\" (2) \"My smile\" (3) \"My eyes\" (4) \" whole me\"; mark only \"whole me\" (option text exactly \" whole me\") as correct.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-level-5-as-a-free-text-question-when-did-you-find-that-i-am-the-one-for-you-and-provide-a-writing-box-multi-line-text-area-plus-a-submit-continue-action-that-advances-to-the-final-completion-slide",
+      "title": "Implement Level 5 as a free-text question: \"When did you find that I am the one for you?\" and provide a writing box (multi-line text area) plus a submit/continue action that advances to the final completion slide.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-answer-feedback-behavior-when-a-user-selects-an-incorrect-option-on-levels-1-2-or-4-play-a-buzz-sound-and-display-the-message-exactly-do-you-really-think-this-think-more-on-correct-answers-advance-to-the-next-question-slide",
+      "title": "Add answer feedback behavior: when a user selects an incorrect option on Levels 1, 2, or 4, play a \"Buzz\" sound and display the message exactly: \"do you really think this? Think more\"; on correct answers, advance to the next question slide.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-final-completion-slide-shown-after-level-5-submission-with-the-message-exactly-well-i-knew-you-find-your-favourite-girl-well-that-s-me-i-know-you-have-done-a-good-job-so-in-the-reward-you-get-me-for-your-lifetime-and-an-the-over-end-indicator",
+      "title": "Create the final completion slide shown after Level 5 submission with the message exactly: \"Well I knew you find your favourite girl well that's me I know. You have done a good job so in the reward You get me for your lifetime🥰.\" and an \"The over\" end indicator.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-valentine-visual-theme-across-the-entire-experience-consistent-colors-typography-and-layout-suitable-for-a-romantic-treasure-hunt-quiz",
+      "title": "Apply a coherent Valentine visual theme across the entire experience (consistent colors, typography, and layout) suitable for a romantic treasure-hunt quiz.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-required-generated-image-assets-to-the-frontend-as-static-files-and-use-them-in-the-ui-do-not-fetch-images-through-the-backend-place-generated-images-under-frontend-public-assets-generated",
+      "title": "Add required generated image assets to the frontend as static files and use them in the UI (do not fetch images through the backend). Place generated images under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-ui-so-quiz-question-titles-are-never-truncated-half-cut-and-always-display-fully-wrap-to-multiple-lines-when-needed-across-all-levels-especially-on-small-mobile-screens",
+      "title": "Fix the UI so quiz question titles are never truncated/half-cut and always display fully (wrap to multiple lines when needed) across all levels, especially on small/mobile screens.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-intro-animation-intro-screen-before-level-1-begins-and-allow-the-user-to-start-the-quiz-from-that-intro-screen",
+      "title": "Add an intro animation/intro screen before Level 1 begins, and allow the user to start the quiz from that intro screen.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-a-user-selects-a-correct-answer-on-levels-1-2-and-4-show-a-slightly-longer-more-romantic-success-animation-feedback-moment-before-advancing-to-the-next-slide",
+      "title": "When a user selects a correct answer on Levels 1, 2, and 4, show a slightly longer, more romantic success animation/feedback moment before advancing to the next slide.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-investigate-and-fix-the-production-publishing-deployment-error-so-the-app-can-be-successfully-built-and-published-to-production",
+      "title": "Investigate and fix the production publishing/deployment error so the app can be successfully built and published to production.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-smoother-visual-transition-from-the-intro-screen-to-level-1-fade-or-similar-so-starting-the-quiz-feels-seamless",
+      "title": "Implement a smoother visual transition from the Intro screen to Level 1 (fade or similar), so starting the quiz feels seamless.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-in-the-production-build-that-all-quiz-question-titles-and-prompts-render-fully-no-truncation-half-cut-especially-on-small-mobile-screens-and-fix-any-remaining-layout-css-issues-causing-cut-off-text",
+      "title": "Verify in the production build that all quiz question titles and prompts render fully (no truncation/half-cut), especially on small mobile screens, and fix any remaining layout/CSS issues causing cut-off text.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create Valentine-themed treasure hunt quiz website with 5 levels, specified questions/options/answers, slide navigation, buzz sound + prompt on wrong answers, free-text input on final question, and a final reward slide message.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add an intro animation before the quiz begins.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "On correct answers, play a more romantic animation/feedback effect before advancing.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Valentine-themed 5-level treasure hunt quiz website (slide-based)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

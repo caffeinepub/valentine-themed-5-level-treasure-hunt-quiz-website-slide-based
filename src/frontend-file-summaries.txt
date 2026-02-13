@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component managing quiz state with intro screen (level 0) and level progression, rendering the appropriate level component with Valentine-themed background, header, and smooth fade transition between intro and first level.",
+  "frontend/src/components/quiz/QuizSlide.tsx": "Reusable slide wrapper component providing consistent layout with progress indicator and responsive title that wraps properly on all screen sizes using whitespace-normal, break-words, and relaxed line-height.",
+  "frontend/src/components/quiz/ProgressIndicator.tsx": "Visual progress indicator displaying 5 levels with heart icons for completed levels and numbered circles for current/upcoming levels.",
+  "frontend/src/components/quiz/WrongAnswerToast.tsx": "Toast notification component displaying the wrong answer message with auto-dismiss functionality.",
+  "frontend/src/components/quiz/levels/Level1.tsx": "First quiz level with multiple-choice question that shows SuccessFeedbackOverlay animation on correct answer before advancing, with responsive button text wrapping for mobile screens.",
+  "frontend/src/components/quiz/levels/Level2.tsx": "Second quiz level with multiple-choice question that shows SuccessFeedbackOverlay animation on correct answer before advancing, with responsive button text wrapping for mobile screens.",
+  "frontend/src/components/quiz/levels/Level3.tsx": "Third quiz level asking about jail reaction with four options (all treated as correct answers), with responsive button text wrapping for mobile screens.",
+  "frontend/src/components/quiz/levels/Level4.tsx": "Fourth quiz level with multiple-choice question that shows SuccessFeedbackOverlay animation on correct answer before advancing, with responsive button text wrapping for mobile screens.",
+  "frontend/src/components/quiz/levels/Level5.tsx": "Fifth quiz level with free-text question \"When did you find that I am the one for you?\" featuring a responsive multi-line textarea input with proper mobile sizing.",
+  "frontend/src/components/quiz/levels/CompletionSlide.tsx": "Final completion slide displaying the reward message and \"The over\" indicator with Valentine-themed decorations.",
+  "frontend/src/hooks/useBuzzFeedback.ts": "Custom hook managing wrong answer feedback state and playing the buzz sound effect with graceful error handling for missing audio files or autoplay restrictions.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for React Query hooks (not needed for this frontend-only application).",
+  "frontend/src/index.css": "Global styles with Valentine-themed OKLCH color system using rose, pink, and red hues for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Valentine color palette, custom fonts, romantic animation keyframes for floating hearts, sparkles, bursts, glow effects, and new fade-in/fade-out transitions for smooth slide changes.",
+  "frontend/src/components/quiz/levels/IntroSlide.tsx": "Intro screen component with romantic floating hearts and sparkles animation, featuring a welcome message and Start button to begin the quiz.",
+  "frontend/src/components/quiz/SuccessFeedbackOverlay.tsx": "Romantic success overlay component displaying animated hearts burst and sparkles effects when user answers correctly.",
+  "frontend/src/components/quiz/SlideTransition.tsx": "Simple transition wrapper component that provides a smooth fade effect for slide transitions using CSS opacity transitions."
+}

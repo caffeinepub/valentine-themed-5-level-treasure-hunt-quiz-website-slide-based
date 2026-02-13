@@ -1,0 +1,81 @@
+{
+  "kind": "build_request",
+  "title": "Fix production deployment failure and smooth intro-to-quiz transition",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "text": "Investigate and fix the production publishing/deployment error so the app can be successfully built and published to production.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4",
+          "msg-5",
+          "msg-7"
+        ],
+        "quotes": [
+          "🚀 Publishing draft Version 2 to production...",
+          "🙏 Launch unsuccessful: Deployment error",
+          "Why???"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A production publish attempt completes successfully without a deployment error.",
+        "The deployed production URL loads and renders the quiz app without a blank screen or runtime errors.",
+        "If the deployment issue was caused by missing/static assets (e.g., /assets/generated/*, /assets/buzz.mp3), ensure the build includes them and they are served correctly in production."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Implement a smoother visual transition from the Intro screen to Level 1 (fade or similar), so starting the quiz feels seamless.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3",
+          "msg-8"
+        ],
+        "quotes": [
+          "Looks all set — would you like the intro animation to fade into the first question more smoothly?",
+          "Yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking “Start the Quiz” triggers a smooth transition from IntroSlide to Level1 (no abrupt cut).",
+        "The transition works on mobile and desktop and does not block user interaction longer than the intended animation duration.",
+        "The transition does not regress existing intro animations or level rendering."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Verify in the production build that all quiz question titles and prompts render fully (no truncation/half-cut), especially on small mobile screens, and fix any remaining layout/CSS issues causing cut-off text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "I can re‑run the build and fix the issues (full questions not showing and smoother romantic animation) after checking the code."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On small mobile viewport sizes, every level’s question/title text wraps to multiple lines and is fully readable (no clipping).",
+        "No container uses overflow settings that cut off question text vertically.",
+        "The fix is verified in the built production bundle (not only in dev)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo; only add backend logic if required to resolve the deployment failure.",
+    "Do not edit files in frontend immutablePaths (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui). Compose components instead.",
+    "Use English for any user-facing text introduced or modified by these changes."
+  ],
+  "nonGoals": [
+    "Adding new quiz levels, changing existing questions/answers, or altering the final completion message.",
+    "Introducing new authentication providers beyond Internet Identity.",
+    "Adding external databases, third-party backends, or real-time/websocket features."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

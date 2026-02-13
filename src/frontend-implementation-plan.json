@@ -1,0 +1,120 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Stabilize production build and improve intro-to-quiz UX",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Resolve production publish/build failure by ensuring all required static assets are present and referenced safely in production.",
+      "acceptanceCriteria": [
+        "A production publish attempt completes successfully without a deployment error.",
+        "The deployed production URL loads and renders the quiz app without a blank screen or runtime errors.",
+        "If the deployment issue was caused by missing/static assets (e.g., /assets/generated/*, /assets/buzz.mp3), ensure the build includes them and they are served correctly in production."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/buzz.mp3",
+          "operation": "create",
+          "description": "Add the missing wrong-answer audio asset so production can serve /assets/buzz.mp3 reliably."
+        },
+        {
+          "path": "frontend/public/assets/generated/heart-icon.dim_256x256.png",
+          "operation": "create",
+          "description": "Ensure the generated image asset exists in the production-served public directory at frontend/public/assets/generated/heart-icon.dim_256x256.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/valentine-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Ensure the generated image asset exists in the production-served public directory at frontend/public/assets/generated/valentine-bg.dim_1920x1080.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/valentine-header.dim_1600x400.png",
+          "operation": "create",
+          "description": "Ensure the generated image asset exists in the production-served public directory at frontend/public/assets/generated/valentine-header.dim_1600x400.png."
+        },
+        {
+          "path": "frontend/src/hooks/useBuzzFeedback.ts",
+          "operation": "modify",
+          "description": "Harden wrong-answer audio initialization/playback to avoid runtime errors if audio fails to load in production (e.g., handle missing asset or autoplay restrictions gracefully)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Verify background image references remain aligned with public asset paths and adjust any asset URL usage that could break in production."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Add a smooth fade-style transition from the Intro screen to Level 1 when starting the quiz.",
+      "acceptanceCriteria": [
+        "Clicking “Start the Quiz” triggers a smooth transition from IntroSlide to Level1 (no abrupt cut).",
+        "The transition works on mobile and desktop and does not block user interaction longer than the intended animation duration.",
+        "The transition does not regress existing intro animations or level rendering."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/quiz/SlideTransition.tsx",
+          "operation": "create",
+          "description": "Create a small transition wrapper component that can fade out the current slide and fade in the next slide without changing quiz logic."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the new SlideTransition wrapper into the IntroSlide -> Level1 flow so clicking Start triggers a fade transition before rendering Level 1."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Add/adjust Tailwind keyframes/animations (fade in/out) needed for the intro-to-level transition while keeping existing animations intact."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Prevent quiz question titles and prompts from being clipped/truncated on small mobile screens by fixing layout and overflow behaviors.",
+      "acceptanceCriteria": [
+        "On small mobile viewport sizes, every level’s question/title text wraps to multiple lines and is fully readable (no clipping).",
+        "No container uses overflow settings that cut off question text vertically.",
+        "The fix is verified in the built production bundle (not only in dev)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace overly restrictive page-level overflow rules (e.g., avoid full-page overflow-hidden that can clip tall content) while preserving the intended background/visual layout."
+        },
+        {
+          "path": "frontend/src/components/quiz/QuizSlide.tsx",
+          "operation": "modify",
+          "description": "Ensure slide title styling robustly wraps on small screens (no vertical clipping), including any needed padding/line-height adjustments."
+        },
+        {
+          "path": "frontend/src/components/quiz/levels/Level1.tsx",
+          "operation": "modify",
+          "description": "Adjust answer option button text wrapping (e.g., allow multi-line labels) so long options remain fully visible on small screens."
+        },
+        {
+          "path": "frontend/src/components/quiz/levels/Level2.tsx",
+          "operation": "modify",
+          "description": "Adjust answer option button text wrapping (e.g., allow multi-line labels) so long options remain fully visible on small screens."
+        },
+        {
+          "path": "frontend/src/components/quiz/levels/Level3.tsx",
+          "operation": "modify",
+          "description": "Adjust answer option button text wrapping (e.g., allow multi-line labels) and confirm the long question title remains readable without clipping."
+        },
+        {
+          "path": "frontend/src/components/quiz/levels/Level4.tsx",
+          "operation": "modify",
+          "description": "Adjust answer option button text wrapping (e.g., allow multi-line labels) so long options remain fully visible on small screens."
+        },
+        {
+          "path": "frontend/src/components/quiz/levels/Level5.tsx",
+          "operation": "modify",
+          "description": "Confirm the prompt/label and textarea layout remain readable on small screens and do not introduce overflow-based clipping."
+        }
+      ]
+    }
+  ]
+}
